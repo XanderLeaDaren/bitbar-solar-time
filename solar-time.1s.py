@@ -6,9 +6,9 @@
 # <bitbar.author>Alexandre André</bitbar.author>
 # <bitbar.author.github>XanderLeaDaren</bitbar.author.github>
 # <bitbar.desc>Displays the apparent solar time. Specify your longitude in the script.</bitbar.desc>
-# <bitbar.image>https://github.com/garythung/bitbar-age-ticker/blob/master/bitbar-age-ticker.gif?raw=true</bitbar.image>
+# <bitbar.image>https://raw.githubusercontent.com/XanderLeaDaren/bitbar-solar-time/master/bitbar_solar-time.jpg</bitbar.image>
 # <bitbar.dependencies>python</bitbar.dependencies>
-# <bitbar.abouturl>https://github.com/garythung/bitbar-age-ticker</bitbar.abouturl>
+# <bitbar.abouturl>https://github.com/XanderLeaDaren/bitbar-solar-time</bitbar.abouturl>
 
 import datetime
 from math import sin
