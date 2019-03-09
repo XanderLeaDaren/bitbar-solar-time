@@ -16,18 +16,18 @@ import time
 import json
 import urllib
 
-def longitude():
+def get_longitude():
     url = 'http://ipinfo.io/json'
     response = urllib.urlopen(url)
     data = response.read()
     return json.loads(data.decode('utf-8'))["loc"].split(",")[1]
 
 def get_position():
-    return float(longitude()) / 360 * 24 * 60
+    return float(get_longitude()) / 360 * 24 * 60
 
 def get_eq_time(day):
     return 7.655 * sin(2 * (day - 4)) + 9.873 * sin(4 * (day - 172))
-    
+
 def get_sun_time(today, pos, eq_time, tz):
     return today - datetime.timedelta(minutes = -pos + eq_time, seconds = -tz)
 
