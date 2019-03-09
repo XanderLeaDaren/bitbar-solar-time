@@ -22,11 +22,6 @@ def longitude():
     data = response.read()
     return json.loads(data.decode('utf-8'))["loc"].split(",")[1]
 
-def set_information():
-    today = datetime.datetime.now()
-    day = today.timetuple().tm_yday
-    tz = time.timezone
-
 def get_position():
     return float(longitude()) / 360 * 24 * 60
 
