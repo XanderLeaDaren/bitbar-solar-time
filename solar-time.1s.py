@@ -20,7 +20,10 @@ def get_longitude():
     url = 'http://ipinfo.io/json'
     response = urllib.urlopen(url)
     data = response.read()
-    return json.loads(data.decode('utf-8'))["loc"].split(",")[1]
+    text = data.decode ('utf-8')
+    coordinates = json.loads(text)
+    location = coordinates["loc"].split(",")[1]
+    return location
 
 def get_position():
     return float(get_longitude()) / 360 * 24 * 60
