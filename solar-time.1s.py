@@ -17,12 +17,12 @@ import json
 import urllib
 
 def get_longitude():
-    url = 'http://ipinfo.io/json'
+    url = 'http://ip-api.com/json/?fields=lon'
     response = urllib.urlopen(url)
     data = response.read()
     text = data.decode ('utf-8')
     coordinates = json.loads(text)
-    location = coordinates["loc"].split(",")[1]
+    location = coordinates["lon"]
     return location
 
 def get_position():
