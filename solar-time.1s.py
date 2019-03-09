@@ -1,5 +1,5 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+# -*- mode: python; coding: utf-8 -*-
 #
 # <bitbar.title>Apparent Solar Time</bitbar.title>
 # <bitbar.version>v1.0</bitbar.version>
