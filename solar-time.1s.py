@@ -11,7 +11,7 @@
 # <bitbar.abouturl>https://github.com/XanderLeaDaren/bitbar-solar-time</bitbar.abouturl>
 
 import datetime
-from math import sin
+from math import sin,pi
 import time
 import json
 import urllib
@@ -29,7 +29,7 @@ def get_position():
     return float(get_longitude()) / 360 * 24 * 60
 
 def get_eq_time(day):
-    return 7.655 * sin(2 * (day - 4)) + 9.873 * sin(4 * (day - 172))
+    return 7.655 * sin(2 * (day - 4) * pi / 365.25) + 9.873 * sin(4 * (day - 172) * pi / 365.25)
 
 def get_sun_time(today, pos, eq_time, tz):
     return today - datetime.timedelta(minutes = -pos + eq_time, seconds = -tz)
