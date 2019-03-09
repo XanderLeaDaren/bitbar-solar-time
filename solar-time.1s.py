@@ -22,18 +22,29 @@ def longitude():
     data = response.read()
     return json.loads(data.decode('utf-8'))["loc"].split(",")[1]
 
-def print_information():
+def set_information():
     today = datetime.datetime.now()
     day = today.timetuple().tm_yday
     tz = time.timezone
 
-    lg = float(longitude())
-    pos = lg / 360 * 24 * 60
-    eq_time = 7.655 * sin(2 * (day - 4)) + 9.873 * sin(4 * (day - 172))
+def get_position():
+    return float(longitude()) / 360 * 24 * 60
 
-    sun = today - datetime.timedelta(minutes = -pos + eq_time, seconds = -tz)
+def get_eq_time(day):
+    return 7.655 * sin(2 * (day - 4)) + 9.873 * sin(4 * (day - 172))
+    
+def get_sun_time(today, pos, eq_time, tz):
+    return today - datetime.timedelta(minutes = -pos + eq_time, seconds = -tz)
 
-    print "☀️ " + sun.strftime('%H:%M:%S')
+def print_information():
+    today = datetime.datetime.now()
+    day = today.timetuple().tm_yday
+    tz = time.timezone
+    pos = get_position()
+    eq_time = get_eq_time(day)
+    sun_time = get_sun_time(today, pos, eq_time, tz)
+
+    print "☀️ " + sun_time.strftime('%H:%M:%S')
     print "---"
     print "Time Zone Offset: " + str(tz / 3600) + " h"
     print "Position Offset: %.3f" % pos + " min"
