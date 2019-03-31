@@ -2,7 +2,7 @@
 # -*- mode: python; coding: utf-8 -*-
 #
 # <bitbar.title>Apparent Solar Time</bitbar.title>
-# <bitbar.version>v1.0</bitbar.version>
+# <bitbar.version>v1.5</bitbar.version>
 # <bitbar.author>Alexandre André</bitbar.author>
 # <bitbar.author.github>XanderLeaDaren</bitbar.author.github>
 # <bitbar.desc>Displays the apparent solar time.</bitbar.desc>
